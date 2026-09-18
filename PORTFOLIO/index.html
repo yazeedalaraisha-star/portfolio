@@ -1,0 +1,1960 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>يزيد العرايشه | YAZEED AL-ARAISHA - مطور ومبتكر حلول الذكاء الاصطناعي والأتمتة السحابية</title>
+
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="البورتفوليو الاحترافي لـ يزيد العرايشه (YAZEED AL-ARAISHA) - أخصائي ومطور حلول الذكاء الاصطناعي، أتمتة مسارات العمل المتقدمة (n8n)، الرؤية الحاسوبية (Gemini Vision OCR)، وتحليل البيانات بـ Power BI، وتطوير الأنظمة السحابية." />
+  <meta name="keywords" content="يزيد العرايشه, YAZEED AL-ARAISHA, ذكاء اصطناعي, أتمتة, n8n, Gemini Vision OCR, Power BI, Timesheet Analyzer, CMMS, MongoDB, Render, Python, AppSheet, AI Specialist, AI Developer" />
+  <meta name="author" content="Yazeed Al-Araisha" />
+  <meta name="theme-color" content="#001621" />
+
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="يزيد العرايشه | YAZEED AL-ARAISHA - أخصائي ومطور حلول الذكاء الاصطناعي والأتمتة" />
+  <meta property="og:description" content="تطوير حلول الذكاء الاصطناعي، الرؤية الحاسوبية، مسارات الأتمتة الذكية، وتحليل البيانات المتقدم." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://timesheet-analyzer.onrender.com/" />
+
+  <!-- Google Fonts: Cairo (Arabic) & Plus Jakarta Sans (English) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body dir="rtl">
+
+  <!-- Background Visual Canvas (Constellation / Cyber Mesh) -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Cyber Grid Subtle Texture -->
+  <div class="cyber-grid-overlay" aria-hidden="true"></div>
+
+  <!-- Ambient Glowing Orbs -->
+  <div class="ambient-glow-wrapper" aria-hidden="true">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <!-- Mouse Spotlight Layer -->
+  <div class="mouse-spotlight" aria-hidden="true"></div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-container" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+  </div>
+
+  <!-- Main App Layout Container -->
+  <div class="app-container">
+
+    <!-- ====================================================================
+         NAVIGATION BAR (Without Theme Toggle - Pure Dark Luxury)
+         ==================================================================== -->
+    <header class="site-nav" id="main-header">
+      <div class="nav-content">
+        <!-- Brand / Identity -->
+        <a href="#hero" class="nav-brand" aria-label="Home">
+          <div class="brand-avatar">
+            <img src="assets/img/yazeed-profile.jpg" alt="يزيد العرايشه" class="brand-avatar-img" />
+          </div>
+          <div class="brand-text">
+            <span class="brand-name" data-i18n="hero.name">يزيد العرايشه</span>
+            <span class="brand-title">AI & Automation Specialist</span>
+          </div>
+        </a>
+
+        <!-- Navigation Menu -->
+        <nav class="nav-links" id="nav-links">
+          <a href="#about" class="nav-link" data-i18n="nav.about">شغف الـ AI</a>
+          <a href="#skills" class="nav-link" data-i18n="nav.skills">الترسانة التقنية</a>
+          <a href="#projects" class="nav-link" data-i18n="nav.projects">المشاريع والأنظمة</a>
+          <a href="#cmms" class="nav-link" data-i18n="nav.cmms">نظام CMMS المركزي</a>
+          <a href="#experience" class="nav-link" data-i18n="nav.experience">المسيرة والخبرات</a>
+          <a href="#certs" class="nav-link" data-i18n="nav.certs">الشهادات والاعتمادات</a>
+          <a href="#contact" class="nav-link" data-i18n="nav.contact">تواصل معي</a>
+        </nav>
+
+        <!-- Nav Action Buttons -->
+        <div class="nav-actions">
+          <!-- Language Switcher -->
+          <button class="lang-switch-btn magnetic-btn" id="lang-toggle-btn" aria-label="Switch Language">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span class="lang-label" data-i18n="nav.langSwitch">English</span>
+          </button>
+
+          <!-- Direct CTA Button -->
+          <a href="#contact" class="btn btn-primary magnetic-btn nav-cta-btn" data-i18n="nav.getInTouch">
+            تواصل معي
+          </a>
+
+          <!-- Mobile Menu Hamburger -->
+          <button class="icon-btn mobile-menu-toggle" id="mobile-menu-btn" aria-label="Open Mobile Menu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ====================================================================
+         HERO SECTION (Pure AI, Automation, & Cloud Systems Focus)
+         ==================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Text Content Column -->
+          <div class="hero-content">
+            <div class="hero-badge-container">
+              <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                <span data-i18n="hero.badge">متاح لمشاريع الذكاء الاصطناعي والأتمتة السحابية</span>
+              </div>
+            </div>
+
+            <h1 class="hero-title">
+              <span class="highlight-fire" data-i18n="hero.title">مطور ومبتكر حلول الذكاء الاصطناعي وأتمتة مسارات العمل | مطوّر أنظمة سحابية ذكية</span>
+            </h1>
+
+            <p class="hero-desc" data-i18n="hero.desc">
+              أبتكر وأطور أنظمة ذكية تجمع بين محركات الذكاء الاصطناعي التوليدي والرؤية الحاسوبية (Gemini Vision OCR)، وأتمتة مسارات العمل المتقدمة (n8n)، وتحليل البيانات التفاعلي (Power BI)، وقواعد البيانات السحابية (MongoDB) لتحويل العمليات الإدارية المعقدة إلى تدفقات رقمية ذاتية التشغيل وبأعلى درجات الدقة.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-primary magnetic-btn">
+                <span data-i18n="hero.exploreBtn">استكشف الأنظمة والمشاريع</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </a>
+
+              <a href="#contact" class="btn btn-secondary magnetic-btn">
+                <span data-i18n="hero.contactBtn">تواصل مباشرة</span>
+              </a>
+
+              <button class="btn btn-outline magnetic-btn" data-copy-target="yazeedalaraisha@gmail.com" title="نسخ البريد الإلكتروني">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+                <span class="number-isolate">yazeedalaraisha@gmail.com</span>
+              </button>
+            </div>
+
+            <!-- Stats Bar with Isolated Direction -->
+            <div class="hero-stats">
+              <div class="stat-item">
+                <div class="stat-number-wrap">
+                  <span class="stat-number" data-target="3">3</span>
+                  <span class="stat-plus">+</span>
+                </div>
+                <span class="stat-label" data-i18n="hero.statExp">سنوات خبرة في تطوير النظم والعمليات</span>
+              </div>
+
+              <div class="stat-item">
+                <div class="stat-number-wrap">
+                  <span class="stat-number" data-target="30">30</span>
+                  <span class="stat-plus">+</span>
+                </div>
+                <span class="stat-label" data-i18n="hero.statAI">ساعة معتمدة في أدوات الذكاء الاصطناعي</span>
+              </div>
+
+              <div class="stat-item">
+                <div class="stat-number-wrap">
+                  <span class="stat-number" data-target="10">10</span>
+                  <span class="stat-plus">+</span>
+                </div>
+                <span class="stat-label" data-i18n="hero.statWorkflows">سير عمل مؤتمت وتطبيق سحابي حي</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual Column / 3D Tilt Card -->
+          <div class="hero-visual">
+            <div class="hero-tech-card tilt-card glass-card">
+              <div class="tech-card-header">
+                <div class="tech-card-badge">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                  </svg>
+                  <span data-i18n="hero.cardBadge">ترسانة الـ AI</span>
+                </div>
+                <div class="window-dots" aria-hidden="true">
+                  <div class="window-dot"></div>
+                  <div class="window-dot"></div>
+                  <div class="window-dot"></div>
+                </div>
+              </div>
+
+              <div class="tech-card-avatar-wrap">
+                <div class="avatar-ring">
+                  <div class="avatar-inner">
+                    <img src="assets/img/yazeed-profile.jpg" alt="يزيد العرايشه | Yazeed Al-Araisha" class="hero-avatar-img" />
+                  </div>
+                </div>
+                <div class="avatar-badge-sub" data-i18n="hero.cardSubBadge">مبتكر أنظمة ذكية</div>
+              </div>
+
+              <div class="hero-profile-info">
+                <h2 class="hero-profile-name" data-i18n="hero.name">يزيد العرايشه</h2>
+                <p class="hero-profile-title number-isolate">Amman, Jordan | +962 79 310 1728</p>
+              </div>
+
+              <!-- AI Architecture Pillars Grid -->
+              <div class="identity-grid">
+                <div class="identity-card">
+                  <div class="identity-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"/>
+                      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                      <path d="M2 12h20"/>
+                    </svg>
+                  </div>
+                  <div class="identity-card-title" data-i18n="hero.identityAITitle">محركات الذكاء الاصطناعي</div>
+                  <div class="identity-card-desc" data-i18n="hero.identityAIDesc">Gemini Vision OCR، هندسة الأوامر، والوكلاء الأذكياء</div>
+                </div>
+
+                <div class="identity-card">
+                  <div class="identity-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                    </svg>
+                  </div>
+                  <div class="identity-card-title" data-i18n="hero.identityAutoTitle">الأتمتة وقواعد البيانات</div>
+                  <div class="identity-card-desc" data-i18n="hero.identityAutoDesc">مسارات n8n، استضافة Render، وMongoDB Atlas</div>
+                </div>
+              </div>
+
+              <!-- Floating Tech Chips -->
+              <div class="hero-tech-chips">
+                <span class="tech-chip">Gemini Vision OCR</span>
+                <span class="tech-chip">n8n Automation</span>
+                <span class="tech-chip">Power BI Analytics</span>
+                <span class="tech-chip">MongoDB Atlas</span>
+                <span class="tech-chip">Render Cloud</span>
+                <span class="tech-chip">AppSheet</span>
+                <span class="tech-chip">Figma UI/UX</span>
+                <span class="tech-chip">Prompt Engineering</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         ABOUT ME SECTION (Pure Focus on Passion for AI & Automation)
+         ==================================================================== -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+            <span data-i18n="about.tag">فلسفة الابتكار</span>
+          </div>
+          <h2 class="section-title" data-i18n="about.title">
+            شغفي بالذكاء الاصطناعي: <span class="highlight">إعادة ابتكار الإنتاجية</span>
+          </h2>
+        </div>
+
+        <div class="about-grid">
+          <!-- AI Narrative Column -->
+          <div class="about-narrative">
+            <p class="about-lead" data-i18n="about.lead">
+              الذكاء الاصطناعي بالنسبة لي ليس مجرد أدوات رقمية مساعدة، بل هو <span class="gradient-word">العقل المفكر والمحرك الرئيسي لتحرير الطاقات البشرية</span> وصناعة أنظمة خارقة السرعة وخالية من الأخطاء.
+            </p>
+
+            <p class="about-text" data-i18n="about.p1">
+              انطلق شغفي بالذكاء الاصطناعي من رؤية واضحة: لماذا يستنزف الموظفون والفرق ساعات طويلة في مهام متكررة وقراءة مستندات يدوية وإدخال بيانات روتيني بينما يمكن لنماذج الذكاء الاصطناعي المتقدمة (LLMs) والرؤية الحاسوبية (Computer Vision) إنجازها في ثوانٍ معدودة وبدقة لا متناهية؟
+            </p>
+
+            <p class="about-text" data-i18n="about.p2">
+              كرست طاقتي لتطوير حلول واقعية تدمج تقنيات الرؤية البصرية الفائقة مثل Google Gemini Vision لقراءة وتحليل الوثائق المصورة، وتصميم مسارات أتمتة كاملة عبر n8n لربط واجهات البرمجة APIs، وتشييد قواعد بيانات سحابية مرنة عبر MongoDB Atlas. النتيجة هي أنظمة ذاتية التعلم، تُطابق السجلات، تحسب الفروقات، وتصدر التقارير الاستراتيجية تلقائياً دون أي تدخل بشري.
+            </p>
+
+            <!-- Quote Block -->
+            <div class="ai-quote-box">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+              <div class="quote-content-wrap">
+                <div class="ai-quote-text" data-i18n="about.quote">
+                  «الذكاء الاصطناعي لا يحل محل الإنسان المبدع، بل يمنحه قوى تقنية خارقة تختصر أياماً من الجهد في ثوانٍ من الذكاء المطلق.»
+                </div>
+                <div class="quote-author-badge">
+                  <div class="quote-author-avatar">
+                    <img src="assets/img/yazeed-profile.jpg" alt="يزيد العرايشه" class="quote-author-img" />
+                  </div>
+                  <div class="quote-author-meta">
+                    <span class="quote-author-name" data-i18n="hero.name">يزيد العرايشه</span>
+                    <span class="quote-author-role">AI & Automation Specialist</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Pillars Grid Column -->
+          <div class="ai-pillars-grid">
+            <div class="pillar-card tilt-card glass-card">
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </div>
+              <h3 class="pillar-title" data-i18n="about.pillar1Title">الرؤية الحاسوبية والـ OCR الذكي</h3>
+              <p class="pillar-desc" data-i18n="about.pillar1Desc">توظيف محرك Gemini Vision لقراءة لقطات الشاشة والمستندات المعقدة واستخراج البيانات وتنظيفها آلياً.</p>
+            </div>
+
+            <div class="pillar-card tilt-card glass-card">
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+              </div>
+              <h3 class="pillar-title" data-i18n="about.pillar2Title">هندسة مسارات الأتمتة (n8n Logic)</h3>
+              <p class="pillar-desc" data-i18n="about.pillar2Desc">بناء خطوط أنابيب تكاملية تربط الـ Webhooks والـ APIs وتدير تدفق البيانات السحابية بدون توقف.</p>
+            </div>
+
+            <div class="pillar-card tilt-card glass-card">
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+              </div>
+              <h3 class="pillar-title" data-i18n="about.pillar3Title">بناء الأنظمة السحابية والـ Web Apps</h3>
+              <p class="pillar-desc" data-i18n="about.pillar3Desc">تطوير تطبيقات ويب سحابية متقدمة مع واجهات مستخدم زجاجية سريعة والاستضافة على منصة Render.</p>
+            </div>
+
+            <div class="pillar-card tilt-card glass-card">
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="20" x2="18" y2="10"/>
+                  <line x1="12" y1="20" x2="12" y2="4"/>
+                  <line x1="6" y1="20" x2="6" y2="14"/>
+                </svg>
+              </div>
+              <h3 class="pillar-title" data-i18n="about.pillar4Title">ذكاء الأعمال وتحليل البيانات (Power BI)</h3>
+              <p class="pillar-desc" data-i18n="about.pillar4Desc">تحويل البيانات المجمعة إلى مؤشرات أداء تفاعلية ولوحات تحكم تنفيذية تدعم اتخاذ القرارات في الوقت الفعلي.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SKILLS SECTION (Pure AI, Automation, Cloud & Data Toolkit)
+         ==================================================================== -->
+    <section class="skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+            <span data-i18n="skills.tag">القدرات والترسانة</span>
+          </div>
+          <h2 class="section-title" data-i18n="skills.title">
+            المهارات التقنية <span class="highlight">وهندسة الأتمتة</span>
+          </h2>
+          <p class="section-subtitle" data-i18n="skills.subtitle">
+            مجموعة متكاملة من أحدث أدوات الذكاء الاصطناعي، خطوط الأتمتة، وتحليل البيانات المتقدم.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="skills-filter-tabs">
+          <button class="tab-btn active" data-filter="all" data-i18n="skills.tabs.all">جميع المهارات</button>
+          <button class="tab-btn" data-filter="ai" data-i18n="skills.tabs.ai">الذكاء الاصطناعي والرؤية</button>
+          <button class="tab-btn" data-filter="auto" data-i18n="skills.tabs.auto">الأتمتة ومسارات العمل</button>
+          <button class="tab-btn" data-filter="data" data-i18n="skills.tabs.data">تحليل البيانات والـ BI</button>
+          <button class="tab-btn" data-filter="dev" data-i18n="skills.tabs.dev">تطوير الويب والسحابة</button>
+          <button class="tab-btn" data-filter="cad" data-i18n="skills.tabs.cad">التصميم والأنظمة</button>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid">
+          <!-- Skill 1: Gemini Vision OCR -->
+          <div class="skill-card tilt-card" data-category="ai">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </div>
+              <div class="skill-header-meta">
+                <h3 class="skill-name" data-i18n="skills.items.geminiOcr.name">الرؤية الحاسوبية (Gemini Vision OCR)</h3>
+                <span class="skill-category">Multimodal AI</span>
+              </div>
+            </div>
+            <p class="skill-desc" data-i18n="skills.items.geminiOcr.desc">تحليل الصور والمستندات بذكاء، استخراج الجداول والنصوص العربية بدقة، ومعالجة تشوهات الوثائق تلقائياً.</p>
+            <div class="skill-proficiency-wrap">
+              <span>Proficiency</span>
+              <span class="skill-level-text number-isolate">96%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="96"></div>
+            </div>
+          </div>
+
+          <!-- Skill 2: n8n Automation -->
+          <div class="skill-card tilt-card" data-category="auto">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+              </div>
+              <div class="skill-header-meta">
+                <h3 class="skill-name" data-i18n="skills.items.n8n.name">هندسة أتمتة العمليات (n8n Pipelines)</h3>
+                <span class="skill-category">Workflow Architecture</span>
+              </div>
+            </div>
+            <p class="skill-desc" data-i18n="skills.items.n8n.desc">بناء مسارات معقدة، ربط الـ APIs، التعامل مع الـ Webhooks، وأتمتة سير المعاملات متعددة المنصات.</p>
+            <div class="skill-proficiency-wrap">
+              <span>Proficiency</span>
+              <span class="skill-level-text number-isolate">95%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="95"></div>
+            </div>
+          </div>
+
+          <!-- Skill 3: GenAI & Prompt Engineering -->
+          <div class="skill-card tilt-card" data-category="ai">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                </svg>
+              </div>
+              <div class="skill-header-meta">
+                <h3 class="skill-name" data-i18n="skills.items.genai.name">نماذج الـ GenAI وهندسة الأوامر</h3>
+                <span class="skill-category">LLMs & Agentic Prompts</span>
+              </div>
+            </div>
+            <p class="skill-desc" data-i18n="skills.items.genai.desc">إتقان نماذج اللغة الكبيرة (LLMs) وصياغة الـ Prompts المتقدمة لإعداد التحليلات وصنع القرارات الذكية.</p>
+            <div class="skill-proficiency-wrap">
+              <span>Proficiency</span>
+              <span class="skill-level-text number-isolate">94%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="94"></div>
+            </div>
+          </div>
+
+          <!-- Skill 4: Power BI -->
+          <div class="skill-card tilt-card" data-category="data">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="20" x2="18" y2="10"/>
+                  <line x1="12" y1="20" x2="12" y2="4"/>
+                  <line x1="6" y1="20" x2="6" y2="14"/>
+                </svg>
+              </div>
+              <div class="skill-header-meta">
+                <h3 class="skill-name" data-i18n="skills.items.powerbi.name">تحليل البيانات وذكاء الأعمال (Power BI)</h3>
+                <span class="skill-category">Business Intelligence</span>
+              </div>
+            </div>
+            <p class="skill-desc" data-i18n="skills.items.powerbi.desc">بناء لوحات تحكم تفاعلية احترافية، كتابة صيغ DAX المعقدة، وربط مصادر البيانات المباشرة.</p>
+            <div class="skill-proficiency-wrap">
+              <span>Proficiency</span>
+              <span class="skill-level-text number-isolate">90%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="90"></div>
+            </div>
+          </div>
+
+          <!-- Skill 5: AppSheet -->
+          <div class="skill-card tilt-card" data-category="auto">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                  <line x1="12" y1="18" x2="12.01" y2="18"/>
+                </svg>
+              </div>
+              <div class="skill-header-meta">
+                <h3 class="skill-name" data-i18n="skills.items.appsheet.name">تطبيقات الأعمال (AppSheet)</h3>
+                <span class="skill-category">Low-Code Solutions</span>
+              </div>
+            </div>
+            <p class="skill-desc" data-i18n="skills.items.appsheet.desc">تصميم ونشر تطبيقات إدارية وميدانية متكاملة لفرق العمل متصلة بالسحابة مع صلاحيات دقيقة.</p>
+            <div class="skill-proficiency-wrap">
+              <span>Proficiency</span>
+              <span class="skill-level-text number-isolate">88%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="88"></div>
+            </div>
+          </div>
+
+          <!-- Skill 6: Cloud Deployment (Render) -->
+          <div class="skill-card tilt-card" data-category="dev">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+                </svg>
+              </div>
+              <div class="skill-header-meta">
+                <h3 class="skill-name" data-i18n="skills.items.cloudDev.name">النشر السحابي (Render & Cloud Hosting)</h3>
+                <span class="skill-category">Cloud Operations</span>
+              </div>
+            </div>
+            <p class="skill-desc" data-i18n="skills.items.cloudDev.desc">استضافة وإدارة التطبيقات الحية على Render مع إعداد الـ Continuous Deployment وتأمين الـ Endpoints.</p>
+            <div class="skill-proficiency-wrap">
+              <span>Proficiency</span>
+              <span class="skill-level-text number-isolate">90%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="90"></div>
+            </div>
+          </div>
+
+          <!-- Skill 7: MongoDB Atlas -->
+          <div class="skill-card tilt-card" data-category="dev">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                </svg>
+              </div>
+              <div class="skill-header-meta">
+                <h3 class="skill-name" data-i18n="skills.items.databases.name">قواعد البيانات السحابية (MongoDB Atlas)</h3>
+                <span class="skill-category">NoSQL Document Store</span>
+              </div>
+            </div>
+            <p class="skill-desc" data-i18n="skills.items.databases.desc">تصميم المخططات المرنة، إدارة المستندات غير العلائقية، والمزامنة السحابية الفورية مع التطبيقات.</p>
+            <div class="skill-proficiency-wrap">
+              <span>Proficiency</span>
+              <span class="skill-level-text number-isolate">87%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="87"></div>
+            </div>
+          </div>
+
+          <!-- Skill 8: Modern Web Tech -->
+          <div class="skill-card tilt-card" data-category="dev">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"/>
+                  <polyline points="8 6 2 12 8 18"/>
+                </svg>
+              </div>
+              <div class="skill-header-meta">
+                <h3 class="skill-name" data-i18n="skills.items.webtech.name">تطوير واجهات الويب (HTML5 / Modern CSS / JS)</h3>
+                <span class="skill-category">Frontend Architecture</span>
+              </div>
+            </div>
+            <p class="skill-desc" data-i18n="skills.items.webtech.desc">برمجة واجهات متطورة بتصاميم Glassmorphism، وتأثيرات GSAP الحركية الفاخرة، والتوافقية الكاملة.</p>
+            <div class="skill-proficiency-wrap">
+              <span>Proficiency</span>
+              <span class="skill-level-text number-isolate">92%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="92"></div>
+            </div>
+          </div>
+
+          <!-- Skill 9: Figma UI/UX -->
+          <div class="skill-card tilt-card" data-category="cad">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"/>
+                  <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"/>
+                  <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"/>
+                  <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"/>
+                  <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"/>
+                </svg>
+              </div>
+              <div class="skill-header-meta">
+                <h3 class="skill-name" data-i18n="skills.items.figma.name">تصميم واجهات وتجربة المستخدم (Figma UI/UX)</h3>
+                <span class="skill-category">Interface Engineering</span>
+              </div>
+            </div>
+            <p class="skill-desc" data-i18n="skills.items.figma.desc">رسم النماذج التفاعلية التجسيدية (Prototypes)، وتصميم أنظمة الواجهات (Design Systems) الاحترافية.</p>
+            <div class="skill-proficiency-wrap">
+              <span>Proficiency</span>
+              <span class="skill-level-text number-isolate">86%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="86"></div>
+            </div>
+          </div>
+
+          <!-- Skill 10: CAD & BIM -->
+          <div class="skill-card tilt-card" data-category="cad">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                  <line x1="12" y1="22.08" x2="12" y2="12"/>
+                </svg>
+              </div>
+              <div class="skill-header-meta">
+                <h3 class="skill-name" data-i18n="skills.items.cad.name">النمذجة والأنظمة الهندسية (AutoCAD & Revit)</h3>
+                <span class="skill-category">CAD & BIM (4 Years)</span>
+              </div>
+            </div>
+            <p class="skill-desc" data-i18n="skills.items.cad.desc">خبرة متراكمة تتجاوز 4 سنوات في الرسم الهندسي الدقيق وإدارة المخططات والمنشآت.</p>
+            <div class="skill-proficiency-wrap">
+              <span>Proficiency</span>
+              <span class="skill-level-text number-isolate">92%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="92"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         FEATURED PROJECTS SHOWCASE (Showcasing Real Screenshots & System Demo)
+         ==================================================================== -->
+    <section class="projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+            <span data-i18n="projects.tag">الأنظمة المنشورة</span>
+          </div>
+          <h2 class="section-title" data-i18n="projects.title">
+            مشاريع مميزة <span class="highlight">مدعومة بالذكاء الاصطناعي</span>
+          </h2>
+          <p class="section-subtitle" data-i18n="projects.subtitle">
+            حلول حقيقية تم بناؤها ونشرها سحابياً لخدمة قطاعات العمل وإدارة الموظفين والمنشآت.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Timesheet Analyzer (With Interactive Inline Showcase + Real Cloud App) -->
+          <article class="project-card tilt-card glass-card">
+            <div class="project-visual timesheet-preview-gallery">
+              <div class="project-badge-float">
+                <span class="pulse-dot"></span>
+                <span data-i18n="projects.liveBadge">منشور سحابياً على Render</span>
+              </div>
+              <div class="card-preview-img-wrap">
+                <img id="card-timesheet-img" src="assets/img/timesheet-ocr.png" alt="Timesheet Analyzer System Preview" class="project-thumbnail" />
+              </div>
+              <!-- Mini Screenshot Switcher Tabs directly on card -->
+              <div class="card-preview-tabs">
+                <button type="button" class="card-tab-btn active" data-img="assets/img/timesheet-ocr.png" data-caption="modal.desc1">1. OCR</button>
+                <button type="button" class="card-tab-btn" data-img="assets/img/timesheet-schedule.png" data-caption="modal.desc2">2. الشفتات</button>
+                <button type="button" class="card-tab-btn" data-img="assets/img/timesheet-overtime.png" data-caption="modal.desc3">3. الإضافي</button>
+                <button type="button" class="card-tab-btn" data-img="assets/img/timesheet-employees.png" data-caption="modal.desc4">4. الموظفين</button>
+                <button type="button" class="card-tab-btn" data-img="assets/img/timesheet-records.png" data-caption="modal.desc5">5. السجلات</button>
+              </div>
+              <div class="card-preview-caption" id="card-timesheet-caption" data-i18n="modal.desc1">
+                شاشة استيعاب كشوفات الدوام: يقوم محرك Gemini Vision الفائق بتحليل لقطة الشاشة واستخراج جداول الحضور والانصراف والتصاريح، وتوحيد الأرقام الشرقية والغربية ومقارنتها تلقائياً.
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-category" data-i18n="projects.p1.cat">نظام ذكي متكامل مدعوم بـ Gemini AI</span>
+              <h3 class="project-title" data-i18n="projects.p1.title">محلل كشوفات الدوام الذكي (Timesheet Analyzer)</h3>
+              <p class="project-desc" data-i18n="projects.p1.desc">
+                تطبيق ويب متطور منشور حياً على سحابة Render، يوظف محرك Gemini Vision (OCR) لتحليل لقطات شاشات كشوفات الدوام تلقائياً، وتوحيد الأرقام والتواريخ، وتطبيق خوارزميات برمجية ذكية لاحتساب الإضافي والخصومات وإدارة الشفتات والربط مع MongoDB Atlas وتصدير تقارير Excel و PDF.
+              </p>
+
+              <div class="project-tags">
+                <span class="project-tag" data-i18n="projects.p1.tag1">محرك Gemini OCR</span>
+                <span class="project-tag" data-i18n="projects.p1.tag2">تحليل الحضور والانصراف</span>
+                <span class="project-tag" data-i18n="projects.p1.tag3">سحابة MongoDB</span>
+                <span class="project-tag" data-i18n="projects.p1.tag4">استضافة Render</span>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://timesheet-analyzer.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-primary magnetic-btn">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                    <polyline points="15 3 21 3 21 9"/>
+                    <line x1="10" y1="14" x2="21" y2="3"/>
+                  </svg>
+                  <span data-i18n="projects.viewLive">عرض التطبيق الحي</span>
+                </a>
+
+                <button type="button" class="project-btn project-btn-preview open-showcase-btn magnetic-btn" data-screen-index="0">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21 15 16 10 5 21"/>
+                  </svg>
+                  <span data-i18n="projects.viewScreenshots">معرض الشاشات المكبر (Showcase)</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Smart Mobile Budget (Interactive Mobile App Showcase) -->
+          <article class="project-card tilt-card glass-card">
+            <div class="project-visual timesheet-preview-gallery budget-preview-gallery">
+              <div class="project-badge-float">
+                <span class="pulse-dot"></span>
+                <span data-i18n="projects.p4.cat">تطبيق إدارة مالية وموازنة ذكية للموبايل</span>
+              </div>
+              <div class="card-preview-img-wrap card-preview-img-wrap-mobile">
+                <img id="card-budget-img" src="assets/img/budget-app-screen1.png" alt="Smart Budget App Preview" class="project-thumbnail project-thumbnail-mobile" />
+              </div>
+              <!-- Mini Screenshot Switcher Tabs directly on card -->
+              <div class="card-preview-tabs">
+                <button type="button" class="card-tab-btn active" data-img="assets/img/budget-app-screen1.png" data-budget-tab="0">1. الخلاصة</button>
+                <button type="button" class="card-tab-btn" data-img="assets/img/budget-app-screen2.png" data-budget-tab="1">2. الدخل</button>
+                <button type="button" class="card-tab-btn" data-img="assets/img/budget-app-screen3.png" data-budget-tab="2">3. المصاريف</button>
+                <button type="button" class="card-tab-btn" data-img="assets/img/budget-app-screen4.png" data-budget-tab="3">4. الحصالة</button>
+                <button type="button" class="card-tab-btn" data-img="assets/img/budget-app-screen5.png" data-budget-tab="4">5. المكافآت</button>
+              </div>
+              <div class="card-preview-caption" id="card-budget-caption" data-i18n="modalBudget.desc1">
+                لوحة الخلاصة المالية الفورية: رصد إجمالي الإيرادات، اقتطاع الضمان الاجتماعي (5.5%)، صافي الدخل المتاح، الرصيد الحر المتبقي، ومقياس صندوق الطوارئ التلقائي لتأمين مصاريف 3 أشهر أساسية.
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-category" data-i18n="projects.p4.cat">تطبيق إدارة مالية وموازنة ذكية للموبايل</span>
+              <h3 class="project-title" data-i18n="projects.p4.title">ميزانيتي الذكية للموبايل (Smart Budget AI)</h3>
+              <p class="project-desc" data-i18n="projects.p4.desc">
+                تطبيق موبايل متطور للهندسة المالية الشخصية بالدينار الأردني (JOD). يدمج لوحة تحكم فورية، واحتساب تلقائي لاقتطاع الضمان الاجتماعي (5.5%)، ودفتر مصاريف ذكي مع ميزة تصدير Excel فوري، وحصالة رقمية للأهداف وصندوق الطوارئ (تغطية 3 أشهر)، ونظام نقاط ومكافآت تحفيزي (Gamification) مع لوحة شرف الالتزام، ودعم مظهر Neon Purple.
+              </p>
+
+              <div class="project-tags">
+                <span class="project-tag" data-i18n="projects.p4.tag1">حساب الضمان (5.5%)</span>
+                <span class="project-tag" data-i18n="projects.p4.tag2">دفتر مصاريف وتصدير Excel</span>
+                <span class="project-tag" data-i18n="projects.p4.tag3">صندوق طوارئ وحصالة أهداف</span>
+                <span class="project-tag" data-i18n="projects.p4.tag4">نظام نقاط ولوحة شرف (Gamification)</span>
+              </div>
+
+              <div class="project-actions">
+                <button type="button" class="project-btn project-btn-primary open-budget-showcase-btn magnetic-btn" data-screen-index="0">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21 15 16 10 5 21"/>
+                  </svg>
+                  <span data-i18n="projects.viewScreenshots">معرض الشاشات المكبر (Showcase)</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: CMMS (Interactive Live System Dashboard) -->
+          <article class="project-card tilt-card glass-card">
+            <div class="project-visual" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(circle at center, #002d45 0%, #001621 85%); padding: 1.5rem; gap: 0.8rem;">
+              <div class="project-badge-float">
+                <span class="pulse-dot"></span>
+                <span data-i18n="projects.p2.cat">إدارة الأصول وأوامر العمل والمخزون</span>
+              </div>
+              <div class="project-icon-large">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+              </div>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+                <span class="tech-chip number-isolate" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">91,700 JOD</span>
+                <span class="tech-chip number-isolate" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">MED-77102</span>
+                <span class="tech-chip number-isolate" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">MTTR: 11,172h</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-category" data-i18n="projects.p2.cat">إدارة الأصول وأوامر العمل والمخزون</span>
+              <h3 class="project-title" data-i18n="projects.p2.title">نظام إدارة الصيانة والمخزون المحوسب (CMMS)</h3>
+              <p class="project-desc" data-i18n="projects.p2.desc">
+                نظام إدارة هندسي وطبي متكامل (Central Assets, Work Orders & Inventory System) بالدينار الأردني (JOD). يضم تنبيهات المخزون الذكية، جدولة الصيانة الوقائية الاستباقية (PM)، إدارة بلاغات الأعطال وأوامر العمل (WOs)، سجل التكاليف الموحد (91,700 JOD)، والترميز بالباركود MED-77102.
+              </p>
+
+              <div class="project-tags">
+                <span class="project-tag" data-i18n="projects.p2.tag1">أوامر العمل (WOs)</span>
+                <span class="project-tag" data-i18n="projects.p2.tag2">الصيانة الوقائية (PM)</span>
+                <span class="project-tag" data-i18n="projects.p2.tag3">المخزون بـ JOD</span>
+                <span class="project-tag" data-i18n="projects.p2.tag4">باركود MED-77102</span>
+              </div>
+
+              <div class="project-actions">
+                <a href="#cmms" class="project-btn project-btn-primary magnetic-btn">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                    <line x1="8" y1="21" x2="16" y2="21"/>
+                    <line x1="12" y1="17" x2="12" y2="21"/>
+                  </svg>
+                  <span data-i18n="projects.p2.viewLiveSystem">استعراض المنظومة التفاعلية (أدناه)</span>
+                </a>
+
+                <a href="https://github.com/yazeedalaraisha-star/CMMS.git" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-preview magnetic-btn">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                  <span data-i18n="projects.viewCode">مستودع GitHub</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: AI Workflow Pipelines -->
+          <article class="project-card tilt-card glass-card">
+            <div class="project-visual" style="display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #180900, #381200);">
+              <div class="project-badge-float">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+                <span data-i18n="projects.autoBadge">بنية تحتية للأتمتة</span>
+              </div>
+              <div style="text-align: center;">
+                <div class="project-icon-large" style="margin-inline: auto;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 20V10M12 20V4M6 20v-6"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-category" data-i18n="projects.p3.cat">أتمتة الأعمال والـ AI Agents</span>
+              <h3 class="project-title" data-i18n="projects.p3.title">منظومة خطوط الأتمتة الذكية (AI Workflow Pipelines)</h3>
+              <p class="project-desc" data-i18n="projects.p3.desc">
+                بنية تحتية متطورة عبر منصة n8n معززة بنماذج الذكاء الاصطناعي، تقوم باستقبال المراسلات الرقمية وتصنيفها واستخلاص البيانات وتوليد تقارير الأداء التنفيذية وإرسال التنبيهات الفورية ذاتياً.
+              </p>
+
+              <div class="project-tags">
+                <span class="project-tag" data-i18n="projects.p3.tag1">أتمتة n8n</span>
+                <span class="project-tag" data-i18n="projects.p3.tag2">وكلاء ذكاء اصطناعي</span>
+                <span class="project-tag" data-i18n="projects.p3.tag3">تقارير ذاتية</span>
+                <span class="project-tag" data-i18n="projects.p3.tag4">تكامل APIs</span>
+              </div>
+
+              <div class="project-actions">
+                <a href="#contact" class="project-btn project-btn-primary magnetic-btn">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  </svg>
+                  <span>طلب استشارة أو أتمتة مخصصة</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         INTERACTIVE SHOWCASE MODAL (Timesheet Analyzer Real Screenshots)
+         ==================================================================== -->
+    <div class="modal-overlay" id="showcase-modal" aria-hidden="true" role="dialog">
+      <div class="modal-container">
+        <!-- Header -->
+        <div class="modal-header">
+          <div class="modal-title-wrap">
+            <span class="modal-badge" data-i18n="modal.badge">نظام سحابي حي</span>
+            <h3 class="modal-title" data-i18n="modal.title">معرض الشاشات الحية: محلل كشوفات الدوام (Timesheet Analyzer)</h3>
+          </div>
+          <button type="button" class="modal-close-btn magnetic-btn" id="modal-close-btn" aria-label="Close modal">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-body">
+          <!-- Interactive Tabs -->
+          <div class="modal-tabs">
+            <button type="button" class="modal-tab-btn active" data-index="0" data-i18n="modal.tab1">1. القراءة البصرية (OCR)</button>
+            <button type="button" class="modal-tab-btn" data-index="1" data-i18n="modal.tab2">2. جدول الشفتات والأقسام</button>
+            <button type="button" class="modal-tab-btn" data-index="2" data-i18n="modal.tab3">3. الإضافي والخصومات</button>
+            <button type="button" class="modal-tab-btn" data-index="3" data-i18n="modal.tab4">4. بطاقات الموظفين وساعاتهم</button>
+            <button type="button" class="modal-tab-btn" data-index="4" data-i18n="modal.tab5">5. جدول السجلات وتصدير Excel/PDF</button>
+          </div>
+
+          <!-- Screenshot Viewer -->
+          <div class="modal-viewer-frame">
+            <img id="modal-image-display" src="assets/img/timesheet-ocr.png" alt="Timesheet Real Screenshot" class="modal-image-display" />
+          </div>
+
+          <!-- Description Text -->
+          <div id="modal-screen-desc" class="modal-screen-desc" data-i18n="modal.desc1">
+            شاشة استيعاب كشوفات الدوام: يقوم محرك Gemini Vision الفائق بتحليل لقطة الشاشة واستخراج جداول الحضور والانصراف والتصاريح، وتوحيد الأرقام الشرقية والغربية ومقارنتها تلقائياً.
+          </div>
+        </div>
+
+        <!-- Footer Actions -->
+        <div class="modal-footer-actions">
+          <button type="button" class="btn btn-secondary magnetic-btn" id="modal-close-footer-btn" data-i18n="modal.closeBtn">إغلاق المعرض</button>
+          <a href="https://timesheet-analyzer.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary magnetic-btn">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            <span data-i18n="modal.liveBtn">فتح التطبيق الحي على Render</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         SMART BUDGET APP SHOWCASE MODAL (Real Mobile App Screenshots)
+         ==================================================================== -->
+    <div class="modal-overlay" id="budget-modal" aria-hidden="true" role="dialog">
+      <div class="modal-container modal-container-mobile-app">
+        <!-- Header -->
+        <div class="modal-header">
+          <div class="modal-title-wrap">
+            <span class="modal-badge" data-i18n="modalBudget.badge">تطبيق موبايل ذكي</span>
+            <h3 class="modal-title" data-i18n="modalBudget.title">معرض الشاشات الحية: ميزانيتي الذكية للموبايل (Smart Budget AI)</h3>
+          </div>
+          <button type="button" class="modal-close-btn magnetic-btn" id="budget-modal-close-btn" aria-label="Close modal">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-body">
+          <!-- Interactive Tabs -->
+          <div class="modal-tabs">
+            <button type="button" class="modal-tab-btn active" data-budget-index="0" data-i18n="modalBudget.tab1">1. الخلاصة وصندوق الطوارئ</button>
+            <button type="button" class="modal-tab-btn" data-budget-index="1" data-i18n="modalBudget.tab2">2. تسجيل الدخل والضمان (5.5%)</button>
+            <button type="button" class="modal-tab-btn" data-budget-index="2" data-i18n="modalBudget.tab3">3. دفتر المصاريف وتصدير Excel</button>
+            <button type="button" class="modal-tab-btn" data-budget-index="3" data-i18n="modalBudget.tab4">4. حصالة التوفير والأهداف</button>
+            <button type="button" class="modal-tab-btn" data-budget-index="4" data-i18n="modalBudget.tab5">5. المكافآت ولوحة الالتزام</button>
+          </div>
+
+          <!-- Phone Mockup Frame / Mobile App Viewer -->
+          <div class="modal-viewer-frame modal-viewer-frame-phone">
+            <img id="budget-modal-image-display" src="assets/img/budget-app-screen1.png" alt="Budget App Real Screenshot" class="modal-image-display modal-image-display-phone" />
+          </div>
+
+          <!-- Description Text -->
+          <div id="budget-modal-screen-desc" class="modal-screen-desc" data-i18n="modalBudget.desc1">
+            لوحة الخلاصة المالية الفورية: رصد إجمالي الإيرادات، اقتطاع الضمان الاجتماعي (5.5%)، صافي الدخل المتاح، الرصيد الحر المتبقي، ومقياس صندوق الطوارئ التلقائي لتأمين مصاريف 3 أشهر أساسية.
+          </div>
+        </div>
+
+        <!-- Footer Actions -->
+        <div class="modal-footer-actions">
+          <button type="button" class="btn btn-secondary magnetic-btn" id="budget-modal-close-footer-btn" data-i18n="modal.closeBtn">إغلاق المعرض</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         CMMS STANDALONE INTERACTIVE DASHBOARD SECTION
+         (Central Assets, Work Orders, PM, Inventory & Maintenance Ledger)
+         ==================================================================== -->
+    <section class="cmms-section" id="cmms">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+            <span data-i18n="cmms.tag">نظام CMMS مركزي متكامل</span>
+          </div>
+          <h2 class="section-title" data-i18n="cmms.sectionTitle">
+            منظومة إدارة الأصول، الصيانة والمخزون الطبي <span class="highlight">(CMMS)</span>
+          </h2>
+          <p class="section-subtitle" data-i18n="cmms.sectionSubtitle">
+            نظام هندسي وإداري متطور مبني بالدينار الأردني (JOD) لإدارة الأصول والمعدات، أوامر العمل، الصيانة الوقائية، والمخزون وقطع الغيار بالكامل.
+          </p>
+        </div>
+
+        <!-- Master Glassmorphism Container Card -->
+        <div class="cmms-container-card">
+
+          <!-- Header Banner & Key Indicators -->
+          <div class="cmms-header-banner">
+            <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
+              <span class="modal-badge number-isolate" style="background: rgba(0, 229, 255, 0.12); border-color: var(--accent-cyan); color: var(--accent-cyan);" data-i18n="cmms.currency">
+                العملة: دينار أردني (JOD)
+              </span>
+              <span class="tech-chip number-isolate" style="background: rgba(255, 65, 3, 0.15); border-color: var(--vulcanico); color: #ffffff;">
+                كود الأصل: MED-77102
+              </span>
+            </div>
+            <div class="cmms-banner-chips">
+              <span class="tech-chip number-isolate" style="color: #34d399; font-weight: 800;">
+                وفر الصيانة الوقائية: +32,095 JOD
+              </span>
+              <span class="tech-chip number-isolate" style="color: var(--accent-cyan); font-weight: 800;">
+                متوسط الإصلاح: 11,172.0h
+              </span>
+            </div>
+          </div>
+
+          <!-- Top Critical Alerts (PDF Page 1) -->
+          <div class="cmms-alerts-row">
+            <div class="cmms-alert-box cmms-alert-stock">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+              <div data-i18n="cmms.alertStock">
+                تنبيه نقص المخزون (Low Stock Alert): يوجد 1 أصناف نفدت بالكامل و 2 أصناف وصلت لحد الطلب الأدنى، يجب طلبها مسبقاً لمنع تعطل أوامر الصيانة.
+              </div>
+            </div>
+
+            <div class="cmms-alert-box cmms-alert-pm">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <div data-i18n="cmms.alertPM">
+                تنبيه الصيانة الوقائية الاستباقية: يوجد 1 صيانة متأخرة و 2 صيانة مستحقة قريباً تحتاج للمتابعة الميدانية لمنع الأعطال.
+              </div>
+            </div>
+          </div>
+
+          <!-- KPIs Summary Grid (PDF Page 1) -->
+          <div class="cmms-kpis-grid">
+            <!-- KPI 1 -->
+            <div class="cmms-kpi-card">
+              <div class="cmms-kpi-top">
+                <span class="cmms-kpi-title" data-i18n="cmms.kpis.assetsTitle">إجمالي الأجهزة والمعدات</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--vulcanico)" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+              </div>
+              <div class="cmms-kpi-val number-isolate" data-i18n="cmms.kpis.assetsVal">7</div>
+              <div class="cmms-kpi-sub" data-i18n="cmms.kpis.assetsSub">6 تعمل بكفاءة عالية</div>
+            </div>
+
+            <!-- KPI 2 -->
+            <div class="cmms-kpi-card">
+              <div class="cmms-kpi-top">
+                <span class="cmms-kpi-title" data-i18n="cmms.kpis.pmTitle">جداول الصيانة الدورية</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--accent-amber)" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div class="cmms-kpi-val number-isolate" data-i18n="cmms.kpis.pmVal">5</div>
+              <div class="cmms-kpi-sub" data-i18n="cmms.kpis.pmSub">معدل الالتزام: %80</div>
+            </div>
+
+            <!-- KPI 3 -->
+            <div class="cmms-kpi-card">
+              <div class="cmms-kpi-top">
+                <span class="cmms-kpi-title" data-i18n="cmms.kpis.woTitle">أوامر العمل النشطة</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--accent-cyan)" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                  <polyline points="10 9 9 9 8 9"/>
+                </svg>
+              </div>
+              <div class="cmms-kpi-val number-isolate" data-i18n="cmms.kpis.woVal">2</div>
+              <div class="cmms-kpi-sub" data-i18n="cmms.kpis.woSub">1 أمر قيد العمل الميداني</div>
+            </div>
+
+            <!-- KPI 4 -->
+            <div class="cmms-kpi-card">
+              <div class="cmms-kpi-top">
+                <span class="cmms-kpi-title" data-i18n="cmms.kpis.partsTitle">قطع الغيار والمستهلكات</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--accent-rose)" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                </svg>
+              </div>
+              <div class="cmms-kpi-val number-isolate" data-i18n="cmms.kpis.partsVal">7</div>
+              <div class="cmms-kpi-sub" data-i18n="cmms.kpis.partsSub">3 أصناف تحت الحد الأدنى</div>
+            </div>
+          </div>
+
+          <!-- Executive Cost & MTTR Cards (PDF Page 3) -->
+          <div class="cmms-exec-row">
+            <div class="cmms-exec-card">
+              <div class="cmms-exec-info">
+                <span class="cmms-exec-title" data-i18n="cmms.kpis.costTitle">إجمالي تكاليف الصيانة والقطع</span>
+                <span class="cmms-exec-val number-isolate" data-i18n="cmms.kpis.costVal">91,700 JOD</span>
+                <span class="cmms-exec-sub" data-i18n="cmms.kpis.costSub">وفر الصيانة الوقائية: 32,095 JOD</span>
+              </div>
+              <div class="project-icon-large" style="width: 50px; height: 50px;">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="1" x2="12" y2="23"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="cmms-exec-card" style="background: linear-gradient(135deg, rgba(0, 229, 255, 0.1), rgba(0, 22, 33, 0.85)); border-color: rgba(0, 229, 255, 0.3);">
+              <div class="cmms-exec-info">
+                <span class="cmms-exec-title" data-i18n="cmms.kpis.mttrTitle">متوسط زمن الإصلاح (MTTR)</span>
+                <span class="cmms-exec-val number-isolate" data-i18n="cmms.kpis.mttrVal">11,172.0 Hours</span>
+                <span class="cmms-exec-sub" style="color: var(--accent-cyan);" data-i18n="cmms.kpis.mttrSub">وفق معيار المؤسسة المعتمد</span>
+              </div>
+              <div class="project-icon-large" style="width: 50px; height: 50px; background: rgba(0, 229, 255, 0.15); border-color: rgba(0, 229, 255, 0.35); color: var(--accent-cyan); box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Toolbar: Tabs & Real-time Live Search -->
+          <div class="cmms-toolbar">
+            <div class="cmms-tabs">
+              <button type="button" class="cmms-tab-btn active" data-tab="wos" data-i18n="cmms.tabs.wos">أوامر العمل (WOs)</button>
+              <button type="button" class="cmms-tab-btn" data-tab="pm" data-i18n="cmms.tabs.pm">الصيانة الوقائية (PM)</button>
+              <button type="button" class="cmms-tab-btn" data-tab="inventory" data-i18n="cmms.tabs.inventory">المخزون وقطع الغيار</button>
+              <button type="button" class="cmms-tab-btn" data-tab="reports" data-i18n="cmms.tabs.reports">سجل الصيانة والتقارير التنفيذية</button>
+            </div>
+
+            <div class="cmms-search-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input type="text" id="cmms-search-input" class="cmms-search-input" placeholder="بحث فوري في الأصول، أوامر العمل، المعدات، قطع الغيار، سجل الصيانة..." data-i18n-placeholder="cmms.searchPlaceholder" />
+            </div>
+          </div>
+
+          <!-- TAB 1: WORK ORDERS (WOs) (PDF Page 1) -->
+          <div class="cmms-tab-pane active" id="cmms-pane-wos">
+            <div class="table-responsive-wrapper">
+              <table class="cmms-table" id="table-wos">
+                <thead>
+                  <tr>
+                    <th data-i18n="cmms.headers.woNum">رقم الأمر</th>
+                    <th data-i18n="cmms.headers.titleDevice">العنوان / الجهاز</th>
+                    <th data-i18n="cmms.headers.location">الموقع</th>
+                    <th data-i18n="cmms.headers.priority">الأولوية</th>
+                    <th data-i18n="cmms.headers.status">الحالة</th>
+                    <th data-i18n="cmms.headers.engineer">الفريق / المسؤول</th>
+                    <th data-i18n="cmms.headers.estHours">المدة المقدرة</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="number-isolate" style="font-weight: 800; color: var(--vulcanico);">WO-2024-001</span></td>
+                    <td><strong>جهاز تنفس اصطناعي (Servo-u Ventilator)</strong></td>
+                    <td>العناية الحثيثة ICU - سرير 4</td>
+                    <td><span class="cmms-badge badge-critical">حرج (Critical)</span></td>
+                    <td><span class="cmms-badge badge-inprogress">قيد التنفيذ (In-Progress)</span></td>
+                    <td>م. فهد القرني (هندسة طبية)</td>
+                    <td><span class="number-isolate">4.0 Hours</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="number-isolate" style="font-weight: 800; color: var(--vulcanico);">WO-2024-002</span></td>
+                    <td><strong>جهاز أشعة متنقل (Mobile X-Ray MX8)</strong></td>
+                    <td>قسم الأشعة والتصوير - غرفة 2</td>
+                    <td><span class="cmms-badge badge-urgent">عاجل (Urgent)</span></td>
+                    <td><span class="cmms-badge badge-closed">مغلق / منجز (Closed)</span></td>
+                    <td>م. طارق المنصور (أخصائي أشعة)</td>
+                    <td><span class="number-isolate">2.5 Hours</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="number-isolate" style="font-weight: 800; color: var(--vulcanico);">WO-2024-003</span></td>
+                    <td><strong>سيرفر مركزي للشبكات (Core Rack Server)</strong></td>
+                    <td>مركز البيانات الرئيسي IT DC</td>
+                    <td><span class="cmms-badge badge-normal">عادي (Normal)</span></td>
+                    <td><span class="cmms-badge badge-open">مفتوح للمعاينة (Open)</span></td>
+                    <td>م. خالد الدوسري (بنية تحتية)</td>
+                    <td><span class="number-isolate">6.0 Hours</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- TAB 2: PREVENTIVE MAINTENANCE (PM) (PDF Page 2) -->
+          <div class="cmms-tab-pane" id="cmms-pane-pm">
+            <div class="table-responsive-wrapper">
+              <table class="cmms-table" id="table-pm">
+                <thead>
+                  <tr>
+                    <th data-i18n="cmms.headers.pmDevice">الجهاز المستهدف</th>
+                    <th data-i18n="cmms.headers.location">الموقع والوحدة</th>
+                    <th data-i18n="cmms.headers.frequency">دورية التكرار</th>
+                    <th data-i18n="cmms.headers.status">الحالة والمهلة</th>
+                    <th data-i18n="cmms.headers.checklist">قائمة الفحص والإجراءات المعتمدة</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>جهاز طرد مركزي (Centrifuge 5424 R)</strong></td>
+                    <td>مختبر التحاليل - وحدة 1</td>
+                    <td><span class="number-isolate">كل 6 أشهر</span></td>
+                    <td><span class="cmms-badge badge-critical">متأخر 11 يوماً (Overdue)</span></td>
+                    <td>فحص محور الدوار، معايرة سرعة الدوران RPM، وتشحيم عوازل الضغط المانعة للتسرب.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>جهاز تنفس اصطناعي (Servo-u Ventilator)</strong></td>
+                    <td>قسم العناية الحثيثة ICU - وحدة B</td>
+                    <td><span class="number-isolate">كل 3 أشهر</span></td>
+                    <td><span class="cmms-badge badge-urgent">مستحق خلال 1 يوم (Due Soon)</span></td>
+                    <td>معايرة مستشعر الأكسجين FiO2، اختبار صمامات ضغط الشهيق والزفير، واستبدال فلاتر HEPA.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>جهاز صدمات القلب (Zoll X Series Defibrillator)</strong></td>
+                    <td>طوارئ - غرفة الإنعاش الحاد</td>
+                    <td><span class="number-isolate">كل 6 أشهر</span></td>
+                    <td><span class="cmms-badge badge-urgent">مستحق خلال 1 يوم (Due Soon)</span></td>
+                    <td>فحص تفريغ شحنة البطارية تحت الحمل، معايرة طاقة الصدمة حتى 360J، وسلامة المجاديف.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>جهاز أشعة متنقل (Mobile Radiography Unit)</strong></td>
+                    <td>قسم الأشعة التشخيصية 1</td>
+                    <td><span class="number-isolate">سنوي</span></td>
+                    <td><span class="cmms-badge badge-normal">منجز بالكامل (Completed)</span></td>
+                    <td>فحص تسريب الإشعاع، محاذاة حزمة الضوء Collimator، وفحص سلامة السترات الرصاصية.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>جهاز تعقيم بخاري (Getinge Steam Sterilizer)</strong></td>
+                    <td>قسم التعقيم المركزي CSSD</td>
+                    <td><span class="number-isolate">كل 6 أشهر</span></td>
+                    <td><span class="cmms-badge badge-open">مجدول ومطابق (Scheduled)</span></td>
+                    <td>اختبار ضغط الغرفة الفراغية، فحص صمام الأمان الميكانيكي، واستبدال جوان الباب السيليكوني.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- TAB 3: SPARE PARTS & INVENTORY WITH JOD PRICING (PDF Page 2) -->
+          <div class="cmms-tab-pane" id="cmms-pane-inventory">
+            <div class="table-responsive-wrapper">
+              <table class="cmms-table" id="table-inventory">
+                <thead>
+                  <tr>
+                    <th data-i18n="cmms.headers.sku">رمز القطعة (SKU)</th>
+                    <th data-i18n="cmms.headers.partDesc">اسم ووصف القطعة</th>
+                    <th data-i18n="cmms.headers.compatible">الأجهزة المتوافقة</th>
+                    <th data-i18n="cmms.headers.stockBalance">الرصيد / الحد الأدنى</th>
+                    <th data-i18n="cmms.headers.price">السعر (JOD)</th>
+                    <th data-i18n="cmms.headers.status">حالة التوفر</th>
+                    <th data-i18n="cmms.headers.supplier">المورد المعتمد</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="code-isolate number-isolate" style="color: var(--vulcanico); font-weight: 800;">SKU-FPD-SHIM</span></td>
+                    <td><strong>كاشف رقمي مسطح 43x43 (Flat Panel Detector)</strong></td>
+                    <td>جهاز الأشعة المتنقل MX8</td>
+                    <td><span class="number-isolate" style="color: #f43f5e; font-weight: 800;">0 / 1</span></td>
+                    <td><span class="number-isolate" style="font-weight: 800; color: #ffffff;">3,800 JOD</span></td>
+                    <td><span class="cmms-badge badge-stock-out">نفد بالكامل (Out of Stock)</span></td>
+                    <td>Shimadzu Corp</td>
+                  </tr>
+                  <tr>
+                    <td><span class="code-isolate number-isolate" style="color: var(--vulcanico); font-weight: 800;">SKU-02-GETINGE</span></td>
+                    <td><strong>جوان باب سيليكوني لغرفة التعقيم</strong></td>
+                    <td>معقم بخاري Getinge</td>
+                    <td><span class="number-isolate" style="color: #fbbf24; font-weight: 800;">2 / 2</span></td>
+                    <td><span class="number-isolate" style="font-weight: 800; color: #ffffff;">120 JOD</span></td>
+                    <td><span class="cmms-badge badge-stock-reorder">حد الطلب الأدنى (Reorder Min)</span></td>
+                    <td>Getinge Jordan</td>
+                  </tr>
+                  <tr>
+                    <td><span class="code-isolate number-isolate" style="color: var(--vulcanico); font-weight: 800;">SKU-BAT-ZOLL</span></td>
+                    <td><strong>بطارية ليثيوم قابلة لإعادة الشحن</strong></td>
+                    <td>جهاز صدمات Zoll X Series</td>
+                    <td><span class="number-isolate" style="color: #fbbf24; font-weight: 800;">1 / 2</span></td>
+                    <td><span class="number-isolate" style="font-weight: 800; color: #ffffff;">350 JOD</span></td>
+                    <td><span class="cmms-badge badge-stock-reorder">حد الطلب الأدنى (Reorder Min)</span></td>
+                    <td>Zoll Medical</td>
+                  </tr>
+                  <tr>
+                    <td><span class="code-isolate number-isolate" style="color: var(--vulcanico); font-weight: 800;">SKU-FLT-HPA</span></td>
+                    <td><strong>فلتر هواء عالي الكفاءة HEPA Filter</strong></td>
+                    <td>جهاز تنفس Servo-u</td>
+                    <td><span class="number-isolate" style="color: #34d399; font-weight: 800;">14 / 5</span></td>
+                    <td><span class="number-isolate" style="font-weight: 800; color: #ffffff;">25 JOD</span></td>
+                    <td><span class="cmms-badge badge-stock-ok">متوفر في المستودع (In Stock)</span></td>
+                    <td>Medical Air Systems</td>
+                  </tr>
+                  <tr>
+                    <td><span class="code-isolate number-isolate" style="color: var(--vulcanico); font-weight: 800;">SKU-VAL-EXH</span></td>
+                    <td><strong>مجموعة صمام الزفير Expiratory Valve Cassette</strong></td>
+                    <td>أجهزة التنفس الاصطناعي</td>
+                    <td><span class="number-isolate" style="color: #34d399; font-weight: 800;">4 / 3</span></td>
+                    <td><span class="number-isolate" style="font-weight: 800; color: #ffffff;">480 JOD</span></td>
+                    <td><span class="cmms-badge badge-stock-ok">متوفر في المستودع (In Stock)</span></td>
+                    <td>Critical Care Ltd</td>
+                  </tr>
+                  <tr>
+                    <td><span class="code-isolate number-isolate" style="color: var(--vulcanico); font-weight: 800;">SKU-ROTOR-54</span></td>
+                    <td><strong>دوار طرد مركزي عالي السرعة High-Speed Rotor</strong></td>
+                    <td>Eppendorf 5424 R</td>
+                    <td><span class="number-isolate" style="color: #fbbf24; font-weight: 800;">1 / 1</span></td>
+                    <td><span class="number-isolate" style="font-weight: 800; color: #ffffff;">890 JOD</span></td>
+                    <td><span class="cmms-badge badge-stock-reorder">حد الطلب الأدنى (Reorder Min)</span></td>
+                    <td>Lab Tech Jordan</td>
+                  </tr>
+                  <tr>
+                    <td><span class="code-isolate number-isolate" style="color: var(--vulcanico); font-weight: 800;">SKU-CBL-ECG</span></td>
+                    <td><strong>كيبل تخطيط قلب 12-Lead ECG Trunk Cable</strong></td>
+                    <td>شاشات مراقبة المرضى</td>
+                    <td><span class="number-isolate" style="color: #34d399; font-weight: 800;">8 / 4</span></td>
+                    <td><span class="number-isolate" style="font-weight: 800; color: #ffffff;">65 JOD</span></td>
+                    <td><span class="cmms-badge badge-stock-ok">متوفر في المستودع (In Stock)</span></td>
+                    <td>BioMed Direct</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- TAB 4: UNIFIED MAINTENANCE HISTORY, FINANCIAL SAVINGS & STAFF PERFORMANCE (PDF Page 3) -->
+          <div class="cmms-tab-pane" id="cmms-pane-reports">
+
+            <!-- 1. UNIFIED MAINTENANCE HISTORY LEDGER (From PDF Page 3) -->
+            <div style="margin-bottom: 1.2rem;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--vulcanico)" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                  </svg>
+                  <h4 style="font-size: 1rem; font-weight: 800; color: #ffffff; margin: 0;" data-i18n="cmms.historyTitle">
+                    سجل الأعطال والصيانة الموحد (Unified Maintenance History Ledger)
+                  </h4>
+                </div>
+                <span class="tech-chip number-isolate" style="font-size: 0.76rem; padding: 0.2rem 0.6rem;">توثيق العمليات المنفذة</span>
+              </div>
+              <div class="table-responsive-wrapper">
+                <table class="cmms-table" id="table-history">
+                  <thead>
+                    <tr>
+                      <th data-i18n="cmms.headers.date">التاريخ</th>
+                      <th data-i18n="cmms.headers.titleDevice">الجهاز والموقع</th>
+                      <th data-i18n="cmms.headers.procType">نوع الإجراء</th>
+                      <th data-i18n="cmms.headers.actionDesc">الوصف والإجراء الإصلاحي</th>
+                      <th data-i18n="cmms.headers.engineer">الفني المسؤول</th>
+                      <th data-i18n="cmms.headers.cost">التكلفة (JOD)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span class="number-isolate" style="font-weight: 700; color: var(--vulcanico);">2024-05-18</span></td>
+                      <td><strong>جهاز الأشعة السينية الرقمية (Mobile X-Ray 2)</strong><br><small style="color: var(--text-muted);">المستشفى الرئيسي - طابق 2</small></td>
+                      <td><span class="cmms-badge badge-closed">أمر عمل منجز (Completed WO)</span></td>
+                      <td>استبدال كاشف الأشعة FPD وتوقف اللوحة، تم إنهاء الصيانة واختبار الجهاز بنجاح.</td>
+                      <td><strong>م. طارق المنصور</strong></td>
+                      <td><span class="number-isolate" style="font-weight: 900; color: var(--vulcanico); font-size: 0.95rem;">24,000 JOD</span></td>
+                    </tr>
+                    <tr>
+                      <td><span class="number-isolate" style="font-weight: 700; color: var(--vulcanico);">2024-04-12</span></td>
+                      <td><strong>جهاز التنفس الاصطناعي (Ventilator)</strong><br><small style="color: var(--text-muted);">المستشفى الرئيسي - طابق 2 (ICU)</small></td>
+                      <td><span class="cmms-badge badge-critical">عطل وتنبيه ضغط (Pressure Alarm)</span></td>
+                      <td>تراجع دقة O2، طلب قطعة الغيار من الوكيل واستبدال خلية الأكسجين ومعايرة الحساس.</td>
+                      <td><strong>م. فهد القرني</strong></td>
+                      <td><span class="number-isolate" style="font-weight: 900; color: #fbbf24; font-size: 0.95rem;">4,500 JOD</span></td>
+                    </tr>
+                    <tr>
+                      <td><span class="number-isolate" style="font-weight: 700; color: var(--vulcanico);">2024-02-10</span></td>
+                      <td><strong>جهاز مراقبة العلامات الحيوية (Patient Monitor)</strong><br><small style="color: var(--text-muted);">طوارئ - إنعاش 1</small></td>
+                      <td><span class="cmms-badge badge-inprogress">صيانة وقائية ومعايرة (PM)</span></td>
+                      <td>استبدال وصلات تخطيط القلب ومعايرة حساسات NIBP بنجاح بواسطة الوكيل المعتمد.</td>
+                      <td><strong>م. أحمد السعيد</strong></td>
+                      <td><span class="number-isolate" style="font-weight: 900; color: #34d399; font-size: 0.95rem;">1,400 JOD</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 2. COST BREAKDOWN & ENGINEERS PERFORMANCE -->
+            <div class="cmms-reports-grid">
+              <!-- Cost Breakdown Card -->
+              <div class="cmms-report-card">
+                <div class="cmms-report-header">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="1" x2="12" y2="23"/>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                  </svg>
+                  <span>تحليل النفقات والوفر المالي المحقق (Financial ROI)</span>
+                </div>
+                <div class="cmms-cost-list">
+                  <div class="cmms-cost-row">
+                    <span>الصيانة العلاجية الطارئة (Corrective WOs)</span>
+                    <span class="number-isolate" style="color: #f43f5e; font-weight: 800;">59,605 JOD (65%)</span>
+                  </div>
+                  <div class="cmms-cost-row">
+                    <span>الصيانة الوقائية الدورية (Preventive PM)</span>
+                    <span class="number-isolate" style="color: var(--accent-cyan); font-weight: 800;">32,095 JOD (35%)</span>
+                  </div>
+                  <div class="cmms-cost-row">
+                    <span>وفر الصيانة الوقائية السنوي (PM Direct Savings)</span>
+                    <span class="number-isolate" style="color: var(--accent-emerald); font-weight: 800;">+32,095 JOD</span>
+                  </div>
+                  <div class="cmms-cost-row total-row">
+                    <span>إجمالي التكلفة التشغيلية الموحدة</span>
+                    <span class="number-isolate">91,700 JOD</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Engineers Performance Card -->
+              <div class="cmms-report-card">
+                <div class="cmms-report-header">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+                  <span data-i18n="cmms.engineersTitle">أداء الكادر الهندسي والفني:</span>
+                </div>
+                <div class="cmms-eng-list">
+                  <div class="cmms-eng-card">
+                    <div class="cmms-eng-badge-avatar">TM</div>
+                    <div class="cmms-eng-info">
+                      <div class="cmms-eng-name">م. طارق المنصور (أخصائي أشعة وطاقة)</div>
+                      <div class="cmms-eng-stats">
+                        <span>المهام المنجزة: <b class="number-isolate">2</b></span>
+                        <span>الأوامر الجارية: <b class="number-isolate">0</b></span>
+                        <span class="rate number-isolate">كفاءة الإنجاز: 94%</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="cmms-eng-card">
+                    <div class="cmms-eng-badge-avatar">FQ</div>
+                    <div class="cmms-eng-info">
+                      <div class="cmms-eng-name">فهد القرني (مشرف أجهزة طبية ومعدات حيوية)</div>
+                      <div class="cmms-eng-stats">
+                        <span>المهام المنجزة: <b class="number-isolate">1</b></span>
+                        <span>الأوامر الجارية: <b class="number-isolate">1</b></span>
+                        <span class="rate number-isolate">كفاءة الإنجاز: 94%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Barcode Asset Tag Card (PDF Page 2) -->
+            <div class="cmms-barcode-card">
+              <div class="barcode-visual" aria-label="Barcode Asset Tag MED-77102">
+                <div class="barcode-line thick"></div>
+                <div class="barcode-line thin"></div>
+                <div class="barcode-line thick"></div>
+                <div class="barcode-line thin"></div>
+                <div class="barcode-line"></div>
+                <div class="barcode-line thick"></div>
+                <div class="barcode-line thin"></div>
+                <div class="barcode-line thick"></div>
+                <div class="barcode-line"></div>
+                <div class="barcode-line thick"></div>
+                <div class="barcode-line thin"></div>
+              </div>
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.35rem; flex-wrap: wrap;">
+                  <span class="number-isolate" style="background: var(--vulcanico); color: #ffffff; font-weight: 900; font-size: 0.78rem; padding: 0.2rem 0.6rem; border-radius: 6px;">MED-77102</span>
+                  <strong style="color: #ffffff;" data-i18n="cmms.assetTagTitle">الباركود والملصقات التعريفية (Asset Tag)</strong>
+                </div>
+                <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.6;" data-i18n="cmms.assetTagDesc">
+                  يتم توليد ملصقات تعريفية ذكية مشفرة تحتوي على (كود MED-77102، اسم الجهاز، الموديل S/N، والموقع الدقيق) لكل جهاز لضمان الحصر والرقابة الفورية عبر ماسح الباركود.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- CMMS Bottom Action Row -->
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-top: 1.2rem; border-top: 1px solid var(--glass-border-subtle);">
+            <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.84rem;">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--vulcanico)" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="16" x2="12" y2="12"/>
+                <line x1="12" y1="8" x2="12.01" y2="8"/>
+              </svg>
+              <span>نظام هندسي وإداري متكامل جاهز للربط مع أجهزة المستشفيات والأنظمة السحابية.</span>
+            </div>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <a href="https://github.com/yazeedalaraisha-star/CMMS.git" target="_blank" rel="noopener noreferrer" class="btn btn-secondary magnetic-btn" style="padding: 0.6rem 1.1rem; font-size: 0.85rem;">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span data-i18n="cmms.githubBtn">مستودع الكود على GitHub</span>
+              </a>
+              <a href="#contact" class="btn btn-primary magnetic-btn" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">
+                <span>طلب تخصيص النظام لجهتك</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CAREER & EXPERIENCE TIMELINE (Focus on Systems & Automation)
+         ==================================================================== -->
+    <section class="experience-section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+            <span data-i18n="experience.tag">المسيرة المهنية</span>
+          </div>
+          <h2 class="section-title" data-i18n="experience.title">
+            الخبرات الميدانية في <span class="highlight">هندسة الأنظمة والعمليات</span>
+          </h2>
+          <p class="section-subtitle" data-i18n="experience.subtitle">
+            سجل حافل بتطوير النظم، أتمتة المعاملات، وتحسين الكفاءة التشغيلية في بيئات مؤسسية كبرى.
+          </p>
+        </div>
+
+        <div class="timeline-wrapper">
+          <div class="timeline-line"></div>
+
+          <!-- Role 1 -->
+          <div class="timeline-item">
+            <div class="timeline-node">
+              <div class="timeline-node-inner"></div>
+            </div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-header">
+                <h3 class="timeline-role" data-i18n="experience.role1.role">أخصائي أتمتة المعاملات والتوثيق الرقمي - دائرة الهندسة والصيانة</h3>
+                <span class="timeline-period number-isolate" data-i18n="experience.role1.period">نوفمبر 2025 – حتى الآن</span>
+              </div>
+              <div class="timeline-org">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                </svg>
+                <span data-i18n="experience.role1.org">دائرة الهندسة والعمليات الفنية الكبرى</span>
+              </div>
+              <div class="timeline-duties">
+                <p class="timeline-duty-item" data-i18n="experience.role1.d1">تطوير وإدارة مسارات أرشفة المعاملات والمراسلات الرسمية عبر أنظمة رقمية محوسبة.</p>
+                <p class="timeline-duty-item" data-i18n="experience.role1.d2">إعداد وتوليد التقارير الإدارية والفنية الدورية وتتبع أوامر العمل والصيانة.</p>
+                <p class="timeline-duty-item" data-i18n="experience.role1.d3">تحسين تدفق المعاملات بين الدوائر المختلفة لتقليص زمن إنجاز الطلبات بنسب قياسية.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role 2 -->
+          <div class="timeline-item">
+            <div class="timeline-node">
+              <div class="timeline-node-inner"></div>
+            </div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-header">
+                <h3 class="timeline-role" data-i18n="experience.role2.role">مطور أنظمة ومسؤول تدقيق البيانات التشغيلية</h3>
+                <span class="timeline-period number-isolate" data-i18n="experience.role2.period">أبريل 2025 – سبتمبر 2025</span>
+              </div>
+              <div class="timeline-org">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                </svg>
+                <span data-i18n="experience.role2.org">منظومة إدارية وطنية متقدمة</span>
+              </div>
+              <div class="timeline-duties">
+                <p class="timeline-duty-item" data-i18n="experience.role2.d1">تدقيق السجلات الرقمية وضمان صحتها بنسبة 100% عبر الأنظمة وقواعد البيانات المركزية.</p>
+                <p class="timeline-duty-item" data-i18n="experience.role2.d2">إدارة ومتابعة طلبات الإعفاءات والمعاملات الإدارية المترابطة بدقة متناهية.</p>
+                <p class="timeline-duty-item" data-i18n="experience.role2.d3">التنسيق المستمر بين الإدارات الفنية لضمان سلامة وسلاسة تدفق البيانات.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role 3 -->
+          <div class="timeline-item">
+            <div class="timeline-node">
+              <div class="timeline-node-inner"></div>
+            </div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-header">
+                <h3 class="timeline-role" data-i18n="experience.role3.role">مسؤول توثيق البيانات والأنظمة الفورية</h3>
+                <span class="timeline-period number-isolate" data-i18n="experience.role3.period">يناير 2024 – مارس 2025</span>
+              </div>
+              <div class="timeline-org">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                <span data-i18n="experience.role3.org">بيئة تشغيلية سريعة الوتيرة (قسم الطوارئ)</span>
+              </div>
+              <div class="timeline-duties">
+                <p class="timeline-duty-item" data-i18n="experience.role3.d1">إدارة ومطابقة البيانات الفورية بين أنظمة الدخول والأنظمة المالية بدون أخطاء.</p>
+                <p class="timeline-duty-item" data-i18n="experience.role3.d2">إصدار وتدقيق الفواتير والمطالبات والموافقات السريعة في بيئات عمل عالية الضغط.</p>
+                <p class="timeline-duty-item" data-i18n="experience.role3.d3">توثيق استهلاك الموارد التشغيلية لضمان دقة الحسابات المالية.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role 4 -->
+          <div class="timeline-item">
+            <div class="timeline-node">
+              <div class="timeline-node-inner"></div>
+            </div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-header">
+                <h3 class="timeline-role" data-i18n="experience.role4.role">مستشار حلول ذكاء اصطناعي ومطور ويب حر</h3>
+                <span class="timeline-period number-isolate" data-i18n="experience.role4.period">مارس 2024 – حتى الآن</span>
+              </div>
+              <div class="timeline-org">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                </svg>
+                <span data-i18n="experience.role4.org">العمل الحر (Fiverr / عملاء مباشرون)</span>
+              </div>
+              <div class="timeline-duties">
+                <p class="timeline-duty-item" data-i18n="experience.role4.d1">بناء وتطوير تطبيقات ويب مخصصة وأنظمة سحابية متقدمة لعملاء محليين ودوليين.</p>
+                <p class="timeline-duty-item" data-i18n="experience.role4.d2">أتمتة العمليات للشركات والمكاتب عبر أدوات الذكاء الاصطناعي وn8n لتقليل الجهد اليدوي.</p>
+                <p class="timeline-duty-item" data-i18n="experience.role4.d3">تقديم استشارات تقنية لاختيار أفضل بنية برمجية سحابية للحلول الناشئة.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CERTIFICATIONS & ACCREDITATIONS SECTION
+         ==================================================================== -->
+    <section class="certs-section" id="certs">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="8" r="7"/>
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+            </svg>
+            <span data-i18n="certs.tag">الاعتمادات والتأهيل</span>
+          </div>
+          <h2 class="section-title" data-i18n="certs.title">
+            الشهادات والتدريب <span class="highlight">المهني المعتمد</span>
+          </h2>
+          <p class="section-subtitle" data-i18n="certs.subtitle">
+            دورات تدريبية مكثفة وشهادات معتمدة في الذكاء الاصطناعي، علم البيانات، والتصميم الرقمي.
+          </p>
+        </div>
+
+        <div class="certs-grid">
+          <!-- Cert 1: AI 30h -->
+          <div class="cert-card tilt-card">
+            <div class="cert-badge-row">
+              <div class="cert-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+              </div>
+              <span class="cert-hours number-isolate" data-i18n="certs.ai.hours">30 ساعة معتمدة</span>
+            </div>
+            <h3 class="cert-title" data-i18n="certs.ai.title">الذكاء الاصطناعي لتعزيز الإنتاجية المهنية</h3>
+            <span class="cert-issuer" data-i18n="certs.ai.issuer">مؤسسة التدريب المهني الأردنية (VTI)</span>
+            <p class="cert-desc" data-i18n="certs.ai.desc">تدريب مكثف على أدوات الذكاء الاصطناعي التوليدي، وهندسة الأوامر، وتطبيقات الأتمتة المكتبية المتطورة.</p>
+          </div>
+
+          <!-- Cert 2: Power BI 20h -->
+          <div class="cert-card tilt-card">
+            <div class="cert-badge-row">
+              <div class="cert-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="20" x2="18" y2="10"/>
+                  <line x1="12" y1="20" x2="12" y2="4"/>
+                  <line x1="6" y1="20" x2="6" y2="14"/>
+                </svg>
+              </div>
+              <span class="cert-hours number-isolate" data-i18n="certs.powerbi.hours">20 ساعة معتمدة</span>
+            </div>
+            <h3 class="cert-title" data-i18n="certs.powerbi.title">تحليل البيانات باستخدام Power BI</h3>
+            <span class="cert-issuer" data-i18n="certs.powerbi.issuer">مؤسسة التدريب المهني الأردنية (VTI)</span>
+            <p class="cert-desc" data-i18n="certs.powerbi.desc">بناء لوحات التحكم، استيراد وتحويل البيانات، إنشاء مقاييس DAX، وتصميم التقارير التحليلية.</p>
+          </div>
+
+          <!-- Cert 3: Figma 15h -->
+          <div class="cert-card tilt-card">
+            <div class="cert-badge-row">
+              <div class="cert-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"/>
+                  <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"/>
+                  <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"/>
+                  <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"/>
+                  <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"/>
+                </svg>
+              </div>
+              <span class="cert-hours number-isolate" data-i18n="certs.figma.hours">15 ساعة معتمدة</span>
+            </div>
+            <h3 class="cert-title" data-i18n="certs.figma.title">تصميم واجهات المستخدم عبر Figma</h3>
+            <span class="cert-issuer" data-i18n="certs.figma.issuer">مؤسسة التدريب المهني الأردنية (VTI)</span>
+            <p class="cert-desc" data-i18n="certs.figma.desc">مبادئ تجربة المستخدم UI/UX، بناء النماذج التفاعلية المبدئية، وإعداد نظم التصميم الرقمية.</p>
+          </div>
+
+          <!-- Cert 4: ICDL -->
+          <div class="cert-card tilt-card">
+            <div class="cert-badge-row">
+              <div class="cert-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+              </div>
+              <span class="cert-hours" data-i18n="certs.icdl.hours">شهادة دولية</span>
+            </div>
+            <h3 class="cert-title" data-i18n="certs.icdl.title">الرخصة الدولية لقيادة الحاسوب (ICDL)</h3>
+            <span class="cert-issuer" data-i18n="certs.icdl.issuer">المؤسسة الدولية لقيادة الحاسوب</span>
+            <p class="cert-desc" data-i18n="certs.icdl.desc">إتقان شامل لحزمة مايكروسوفت أوفيس، جداول البيانات Excel، قواعد البيانات، والعمل المكتبي الاحترافي.</p>
+          </div>
+
+          <!-- Cert 5: Edraak Business Plan -->
+          <div class="cert-card tilt-card">
+            <div class="cert-badge-row">
+              <div class="cert-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              </div>
+              <span class="cert-hours" data-i18n="certs.business.hours">شهادة معتمدة</span>
+            </div>
+            <h3 class="cert-title" data-i18n="certs.business.title">تطوير خطط الأعمال (Business Plan)</h3>
+            <span class="cert-issuer" data-i18n="certs.business.issuer">منصة إدراك التعليمية (Edraak)</span>
+            <p class="cert-desc" data-i18n="certs.business.desc">صياغة دراسات الجدوى، استراتيجيات التشغيل، وتخطيط المشاريع الناشئة والتحول الرقمي.</p>
+          </div>
+
+          <!-- Cert 6: Edraak Mentoring -->
+          <div class="cert-card tilt-card">
+            <div class="cert-badge-row">
+              <div class="cert-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <span class="cert-hours" data-i18n="certs.mentoring.hours">شهادة معتمدة</span>
+            </div>
+            <h3 class="cert-title" data-i18n="certs.mentoring.title">مهارات التفويض والتوجيه والإرشاد</h3>
+            <span class="cert-issuer" data-i18n="certs.mentoring.issuer">منصة إدراك التعليمية (Edraak)</span>
+            <p class="cert-desc" data-i18n="certs.mentoring.desc">تطوير المهارات القيادية وإدارة فرق العمل والتواصل الفعال وتفويض المسؤوليات بنجاح.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CONTACT SECTION (Direct Email, WhatsApp, Location Jordan)
+         ==================================================================== -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            <span data-i18n="contact.tag">تواصل مباشر</span>
+          </div>
+          <h2 class="section-title" data-i18n="contact.title">
+            دعنا نبني <span class="highlight">نظامك الذكي القادم</span>
+          </h2>
+          <p class="section-subtitle" data-i18n="contact.subtitle">
+            هل لديك فكرة أو تحدٍ إداري أو مشروع يحتاج لأتمتة ذكية بالذكاء الاصطناعي؟ دعنا نتحدث الآن.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Channels Column -->
+          <div class="contact-info-panel">
+            <!-- Email -->
+            <div class="contact-card-item glass-card">
+              <div class="contact-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <div class="contact-label" data-i18n="contact.emailLabel">البريد الإلكتروني</div>
+                <a href="mailto:yazeedalaraisha@gmail.com" class="contact-value number-isolate">yazeedalaraisha@gmail.com</a>
+              </div>
+              <button class="copy-btn magnetic-btn" data-copy-target="yazeedalaraisha@gmail.com" title="نسخ البريد">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Phone / WhatsApp -->
+            <div class="contact-card-item glass-card">
+              <div class="contact-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <div class="contact-label" data-i18n="contact.phoneLabel">الهاتف / واتساب</div>
+                <a href="https://wa.me/962793101728" target="_blank" rel="noopener noreferrer" class="contact-value number-isolate">+962 79 310 1728</a>
+              </div>
+              <button class="copy-btn magnetic-btn" data-copy-target="+962793101728" title="نسخ الرقم">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Location -->
+            <div class="contact-card-item glass-card">
+              <div class="contact-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <div class="contact-label" data-i18n="contact.locationLabel">الموقع الجغرافي</div>
+                <div class="contact-value" data-i18n="contact.locationValue">المملكة الأردنية الهاشمية - عمّان</div>
+              </div>
+            </div>
+
+            <!-- WhatsApp Direct Action Button -->
+            <button class="btn btn-primary magnetic-btn" id="whatsapp-direct-btn" style="width: 100%;">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+              <span data-i18n="contact.form.whatsappBtn">مراسلة سريعة عبر واتساب</span>
+            </button>
+          </div>
+
+          <!-- Project Form -->
+          <div class="contact-form-card glass-card">
+            <h3 class="pillar-title" style="margin-bottom: 1.6rem;" data-i18n="contact.form.title">أرسل رسالة مباشرة للمشروع</h3>
+
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="form-name" class="form-label" data-i18n="contact.form.nameLabel">الاسم الكامل</label>
+                <input type="text" id="form-name" class="form-input" required data-i18n-placeholder="contact.form.namePlaceholder" placeholder="اكتب اسمك هنا..." />
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label" data-i18n="contact.form.emailLabel">البريد الإلكتروني</label>
+                <input type="email" id="form-email" class="form-input" required data-i18n-placeholder="contact.form.emailPlaceholder" placeholder="example@domain.com" />
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject" class="form-label" data-i18n="contact.form.subjectLabel">الموضوع أو نوع النظام</label>
+                <input type="text" id="form-subject" class="form-input" required data-i18n-placeholder="contact.form.subjectPlaceholder" placeholder="نوع المشروع أو الأتمتة المطلوبة..." />
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label" data-i18n="contact.form.messageLabel">نص الرسالة والتفاصيل</label>
+                <textarea id="form-message" class="form-textarea" required data-i18n-placeholder="contact.form.messagePlaceholder" placeholder="اكتب تفاصيل النظام أو التحدي الإداري الذي تود حله..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary magnetic-btn" style="width: 100%;">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"/>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+                <span data-i18n="contact.form.sendBtn">إرسال الرسالة عبر البريد</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         FOOTER
+         ==================================================================== -->
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div class="footer-social-links">
+          <!-- GitHub Link -->
+          <a href="https://github.com/yazeedalaraisha-star" target="_blank" rel="noopener noreferrer" class="footer-social-btn magnetic-btn" title="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+
+          <!-- Render Live App -->
+          <a href="https://timesheet-analyzer.onrender.com/" target="_blank" rel="noopener noreferrer" class="footer-social-btn magnetic-btn" title="Timesheet Analyzer Live">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+            </svg>
+          </a>
+
+          <!-- Email Direct -->
+          <a href="mailto:yazeedalaraisha@gmail.com" class="footer-social-btn magnetic-btn" title="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+
+          <!-- WhatsApp Direct -->
+          <a href="https://wa.me/962793101728" target="_blank" rel="noopener noreferrer" class="footer-social-btn magnetic-btn" title="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+          </a>
+        </div>
+
+        <p class="footer-copyright">
+          <span data-i18n="footer.rights">جميع الحقوق محفوظة © 2026. تم التصميم والبرمجة بواسطة</span>
+          <span class="author" data-i18n="footer.author">يزيد العرايشه (YAZEED AL-ARAISHA)</span>
+        </p>
+
+        <p style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="footer.subtitle">
+          هندسة حلول الذكاء الاصطناعي، الأتمتة المتقدمة، وتطوير الأنظمة السحابية.
+        </p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
